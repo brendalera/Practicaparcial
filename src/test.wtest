@@ -1,0 +1,94 @@
+import example.*
+
+describe "test pedidos"{
+	const julieta = new Persona(edad = 42)
+	const ana = new Atleta(edad = 25)
+	const rosa = new Atleta(edad = 45, tecnicasConocidas = 8)
+	const perla = new Atleta(edad = 28, tecnicasConocidas = 4, masaMuscular = 6)
+	const monica = new Docente(edad = 45, cursosDados = 6)
+	const luisa = new Docente(edad = 35, cursosDados = 1)
+	const tifon = new Planeta(museos = 3, logMurallas = 2)
+	method initialize(){
+		tifon.agregarHabitante(julieta)
+		tifon.agregarHabitante(ana)
+		tifon.agregarHabitante(rosa)
+		tifon.agregarHabitante(perla)
+		tifon.agregarHabitante(monica)
+		tifon.agregarHabitante(luisa)
+	}
+	test "julieta tiene una potencia de 20"{
+		assert.equals(20, julieta.potencia())
+	}
+	test "ana tiene una potencia de 28"{
+		assert.equals(28, ana.potencia())
+	}
+	test "rosa tiene una potencia de 52"{
+		assert.equals(52, rosa.potencia())
+	}
+	test "perla tiene una potecia de 44"{
+		assert.equals(44, perla.potencia())
+	}
+	test "monica tiene una potecia de 20"{
+		assert.equals(20, monica.potencia())
+	}
+	test "luisa tiene una potecia de 20"{
+		assert.equals(20, luisa.potencia())
+	}
+	test "julieta tiene una inteligencia de 8"{
+		assert.equals(8, julieta.inteligencia())
+	}
+	test "ana tiene una inteligencia de 12"{
+		assert.equals(12, ana.inteligencia())
+	}
+	test "rosa tiene una inteligencia de 8"{
+		assert.equals(8, rosa.inteligencia())
+	}
+	test "perla tiene una inteligencia de 12"{
+		assert.equals(12, perla.inteligencia())
+	}
+	test "monica tiene una inteligencia de 20"{
+		assert.equals(20, monica.inteligencia())
+	}
+	test "luisa tiene una inteligencia de 14"{
+		assert.equals(14, luisa.inteligencia())
+	}
+	test"julieta no es destacado"{
+		assert.notThat(julieta.esDestacado())
+	}
+	test"ana es destacado"{
+		assert.that(ana.esDestacado())
+	}
+	test"rosa es destacado"{
+		assert.that(rosa.esDestacado())
+	}
+	test"perla no es destacado"{
+		assert.notThat(perla.esDestacado())
+	}
+	test"monica es destacado"{
+		assert.that(monica.esDestacado())
+	}
+	test"luisa no es destacado"{
+		assert.notThat(luisa.esDestacado())
+	}
+	test"la delegacion esta conformada por ana, rosa y monica"{
+		assert.equals(#{ana, rosa, monica}, tifon.delegacionDiplomatica())
+	}
+	test"tifon no es planeta culto"{
+		assert.notThat(tifon.esCulto())
+	}
+	test"potencia real de 184"{
+		assert.equals(184, tifon.potenciaReal())
+	}
+	test "perla"{
+		perla.entrenar(15)
+		perla.aprenderUnaTecnica()
+		assert.equals(65, perla.potencia())
+		assert.notThat(perla.esDestacado())
+	}
+	test "perla destacada"{
+		perla.entrenar(15)
+		perla.aprenderUnaTecnica()
+		perla.aprenderUnaTecnica()
+		assert.that(perla.esDestacado())
+	}
+}
