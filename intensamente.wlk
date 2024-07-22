@@ -94,3 +94,15 @@ class Eventos{
 	    }
 	}
 }
+
+/*De cada Evento nos interesa registrar el nombre, el color emocional asociado al evento y el nivel de impacto que produce.
+
+Los eventos deben contar con la posibilidad de transeferirse a un individuo transferirA(unIndividuo), y a su vez el individuo deberá registrar que evento le fue transferido. Pero atención, antes de realizar cualquier acción se debe controlar si ya fue transferido o no. Y si ya fue transferido previamente deberá informarse el error "El evento ya fue transferido al individuo".
+
+Además, los individuos deberán contar con la posibilidad de procesar todos los eventos que tiene registrados y quedar sin eventos al final del proceso.
+
+La acción de procesar un evento por un individuo es tomar solo aquellas emociones cuyo color coincida con el color emocional el evento y producirles un efecto efecto(unEvento)que varia por cada emoción.
+
+Furia aumenta su intensidad en un 50% más del valor del impacto del evento.
+Alegría aumenta su intensidad en el mismo valor que el nivel del impacto del evento, y también aumenta en uno el registro de acontecimientos positivos.
+Tristeza aumenta su intensidad en solo la mitad del nivel del impacto del evento, y pasa a ser melancólica y llorona.*/
